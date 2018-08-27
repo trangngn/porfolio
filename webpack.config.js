@@ -26,17 +26,19 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
     modules: [
-      path.resolve(__dirname, './node_modules')
+      path.resolve(__dirname, './node_modules'),
+      path.resolve(__dirname, './src/foundation'),
+      path.resolve(__dirname, './src/component')
     ]
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/static'),
     publicPath: '/',
     filename: 'bundle.js'
   },
   devtool: 'cheap-eval-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './static',
     hot: true,
     historyApiFallback: {
       index: 'index.html'
